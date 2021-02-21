@@ -14,7 +14,7 @@ async def _(event):
     name = who.user.first_name
     uname = Config.OWNER_UN
     botname = Config.BOT_NAME
-    await aboutbot.send_message(event.chat_id, f"**Hey there {name} 👋**\nI'm Assistant Robot of {unname}\n\nUse the **buttons** for further navigation 💬", 
+    await aboutbot.send_message(event.chat_id, f"**Hey there {name} 👋**\nI'm Assistant Robot of {uname}\n\nUse the **buttons** for further navigation 💬", 
                                 buttons=[
                                     [Button.inline("About❓", data="help")],
                                     ])
