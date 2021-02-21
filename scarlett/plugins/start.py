@@ -14,18 +14,17 @@ async def _(event):
     name = who.user.first_name
     uname = Config.OWNER_UN
     botname = Config.BOT_NAME
-    await aboutbot.send_message(event.chat_id, f"**Hey {name}, I am {botname}.\n\nI am assistant of {uname}\n\nYou can check his info through me.😊**", 
+    await aboutbot.send_message(event.chat_id, f"**Hey there {name} 👋**\nI'm Assistant Robot of {unname}\n\nUse the **buttons** for further navigation 💬", 
                                 buttons=[
-                                    [Button.inline("Help:💬", data="help")],
-                                    [Button.url("Deploy Your Own Bot🤩", url="https://heroku.com/deploy?template=https://github.com/anonyindian/aboutbot")]
-                                ])
+                                    [Button.inline("About❓", data="help")],
+                                    ])
     
 @aboutbot.on(events.callbackquery.CallbackQuery(data="help"))
 async def _(event):
     uname = Config.OWNER_UN
     botname = Config.BOT_NAME
     if Config.BOT_SECTION == "None" and Config.FED_SECTION == "None":
-        await event.edit(f"**Hello there, \nMy name is {botname}.\nI am {uname}'s assistant.**\n\nClick below buttons to find specific info about my master.",
+        await event.edit(f"**Hello there {name} 👋**\nI am Assistant Robot Of {uname}\n\nUse the **buttons** for further navigation 💬",
                         buttons=[
                             [Button.inline("About", data="about"), Button.inline("Channels & Groups", data="grups")],
                             [Button.inline("Communities", data="coms")]
@@ -45,7 +44,7 @@ async def _(event):
                         ])
     
     else:
-         await event.edit(f"**Hello there, \nMy name is {botname}.\nI am {uname}'s assistant.**\n\nClick below buttons to find specific info about my master.", 
+         await event.edit(f"**Hello there {name} 👋\nI am {uname}'s assistant.**\n\nUse the **buttons** for further navigation 💬", 
                         buttons=[
                             [Button.inline("About", data="about"), Button.inline("Bots", data="bots"), Button.inline("Channels & Groups", data="grups")],
                             [Button.inline("Communities", data="coms"), Button.inline("Fed", data="fed")]
