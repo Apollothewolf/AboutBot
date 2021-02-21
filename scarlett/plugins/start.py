@@ -16,7 +16,7 @@ async def _(event):
     botname = Config.BOT_NAME
     await aboutbot.send_message(event.chat_id, f"**Hey there {name} 👋**\nI'm Assistant Robot of {uname}\n\nUse the **buttons** for further navigation 💬", 
                                 buttons=[
-                                    [Button.inline("About❓", data="help")],
+                                    [Button.inline("Help:💬", data="help")],
                                     ])
     
 @aboutbot.on(events.callbackquery.CallbackQuery(data="help"))
