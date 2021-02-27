@@ -21,6 +21,9 @@ async def _(event):
     
 @aboutbot.on(events.callbackquery.CallbackQuery(data="help"))
 async def _(event):
+    
+    who = await aboutbot(GetFullUserRequest(event.sender_id))
+    name = who.user.first_name
     uname = Config.OWNER_UN
     botname = Config.BOT_NAME
     if Config.BOT_SECTION == "None" and Config.FED_SECTION == "None":
